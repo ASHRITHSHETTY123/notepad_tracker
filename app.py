@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, redirect
 from git import Repo
-import glob, os
 
 
 app = Flask(__name__)
@@ -20,7 +19,14 @@ def save():
     with open(new_file, 'w') as f:
         f.write(note)
     return redirect('/')
-
+    # note = request.form['note']
+    # filename = request.form['filename'] + '.txt'
+    # filepath = os.path.join(repo.working_tree_dir, filename)
+    # with open(filepath, 'w') as f:
+    #     f.write(note)
+    # repo.index.add([filepath])
+    # repo.index.commit(request.form['note'])
+    # return redirect('/')
 
 if __name__ == '__main__':
     app.run(debug=True)

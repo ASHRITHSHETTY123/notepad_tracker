@@ -8,9 +8,8 @@ repo = Repo(r"C:\Users\ASHRITH SHETTY\Desktop\Notepad_Tracker")
 
 @app.route('/')
 def index():
-    os.chdir(r"C:\Users\ASHRITH SHETTY\Desktop\Notepad_Tracker\docs")
-    file_list = glob.glob("*.txt")
-    return render_template('index.html', file_list=file_list)
+    
+    return render_template('index.html')
 
 @app.route('/save', methods=['POST'])
 def save():
